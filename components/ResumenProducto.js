@@ -6,8 +6,8 @@ const ResumenProducto = ({ producto }) => {
     const { handleEditarCantidades, handleEliminarProducto } = useQuiosco()
 
     return (
-        <div className="shadow p-5 mb-3 flex gap-10 items-center">
-            <div className="md:w-1/6">
+        <div className="shadow p-5 mb-3 flex flex-col md:flex-row md:gap-10 items-center">
+            <div className="md:w-1/6 w-1/2">
                 <Image
                     width={300}
                     height={400}
@@ -16,15 +16,15 @@ const ResumenProducto = ({ producto }) => {
                 />
             </div>
             <div className="md:w-4/6">
-                <p className="text-3xl font-bold">{producto.nombre}</p>
-                <p className="text-xl font-bold mt-2">Cantidad: {producto.cantidad}</p>
-                <p className="text-xl font-bold text-amber-500 mt-2">Precio: {formatearDinero(producto.precio)}</p>
-                <p className="text-sm text-gray-700 mt-2">Subtotal: {formatearDinero(producto.precio * producto.cantidad)}</p>
+                <p className="text-xl font-bold">{producto.nombre}</p>
+                <p className="text-lg font-bold mt-2 text-center md:text-left">Cantidad: {producto.cantidad}</p>
+                <p className="text-lg font-bold text-amber-500 mt-2 text-center md:text-left">Precio: {formatearDinero(producto.precio)}</p>
+                <p className="text-sm text-gray-700 mt-2 text-center md:text-left">Subtotal: {formatearDinero(producto.precio * producto.cantidad)}</p>
             </div>
             <div>
                 <button
                     type="button"
-                    className="bg-sky-700 flex gap-2 px-5 py-2 text-white font-bold uppercase shadow-md w-full text-center"
+                    className="bg-sky-700 flex gap-2 px-5 py-2 mt-1 text-white font-bold uppercase shadow-md w-full text-center"
                     onClick={() => handleEditarCantidades(producto.id)}
                 >
                     <svg

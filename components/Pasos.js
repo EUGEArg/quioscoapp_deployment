@@ -20,7 +20,7 @@ const Pasos = () => {
         }
         return valor
         }
-//Otra solución para cacular el progreso que se muestra en la barra:  return (paso/3) * 100   
+//Otra solución para calcular el progreso que se muestra en la barra:  return (paso/3) * 100   
 
     return (
         <>
@@ -30,7 +30,7 @@ const Pasos = () => {
                         onClick={() => {
                             router.push(paso.url) //para redireccionar pág
                         }}
-                        className="text-2xl font-bold" key={paso.paso}>{paso.nombre}</button>
+                        className="text-xl font-bold uppercase border rounded border-amber-400 md:p-2 " key={paso.paso}>{paso.nombre}</button>
                 ))}
             </div>
             <div className='bg-gray-100 mb-10'>
